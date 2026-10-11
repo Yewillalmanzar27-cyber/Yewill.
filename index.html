@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para Esther ❤️</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      background: linear-gradient(135deg, #1a0826, #4a1236, #1a0826);
+      font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      text-align: center;
+    }
+    .card {
+      background: rgba(255, 255, 255, 0.08);
+      padding: 35px 25px;
+      border-radius: 24px;
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      max-width: 420px;
+      width: 100%;
+    }
+    h1 { font-size: 26px; margin-bottom: 15px; color: #ff758c; }
+    p { font-size: 16px; line-height: 1.6; color: #e0e0e0; margin-bottom: 20px; }
+    input {
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.1);
+      color: #fff;
+      font-size: 16px;
+      text-align: center;
+      outline: none;
+      margin-bottom: 15px;
+    }
+    input::placeholder { color: #bbb; }
+    button {
+      width: 100%;
+      padding: 14px;
+      border-radius: 12px;
+      border: none;
+      background: linear-gradient(45deg, #ff758c, #ff7eb3);
+      color: white;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(255, 117, 140, 0.4);
+    }
+    .error { color: #ff4d4d; font-size: 14px; margin-top: 10px; display: none; }
+    .content { display: none; }
+    .heart { font-size: 50px; animation: pulse 1.5s infinite; margin-bottom: 15px; }
+    @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.15); } 100% { transform: scale(1); } }
+  </style>
+</head>
+<body>
+
+  <!-- Pantalla de Bloqueo -->
+  <div class="card" id="lockScreen">
+    <div class="heart">🔒❤️</div>
+    <h1>Acceso Privado</h1>
+    <p>Introduce la contraseña para ver tu mensaje especial:</p>
+    <input type="password" id="passwordInput" placeholder="Escribe la contraseña aquí...">
+    <button onclick="checkPassword()">Desbloquear</button>
+    <div class="error" id="errorMessage">Contraseña incorrecta, mi amor. ¡Intenta de nuevo! ❤️</div>
+  </div>
+
+  <!-- Contenido Especial (Mensaje) -->
+  <div class="card content" id="secretContent">
+    <div class="heart">💖</div>
+    <h1>Para mi reina, Esther</h1>
+    <p>Mi amor, sé que a veces peleamos o tenemos nuestros roces, pero quiero que sepas que tú eres lo más lindo y especial que tengo. No me gusta estar mal contigo ni un solo segundo.</p>
+    <p>Hice esta paginita solo para ti, para sacarte una sonrisa y recordarte lo mucho que te amo. ¡Eres mi persona favorita siempre! 🌹✨</p>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const input = document.getElementById('passwordInput').value.trim();
+      const lockScreen = document.getElementById('lockScreen');
+      const secretContent = document.getElementById('secretContent');
+      const errorMessage = document.getElementById('errorMessage');
+
+      // Clave exacta: Esther❤️
+      if (input === 'Esther❤️' || input === 'Esther' || input === 'esther') {
+        lockScreen.style.display = 'none';
+        secretContent.style.display = 'block';
+      } else {
+        errorMessage.style.display = 'block';
+      }
+    }
+  </script>
+
+</body>
+</html>
